@@ -1,11 +1,10 @@
 ---
-title: Writing weekly notes
-org: here
-period: 2023 — now
-status: in progress
-tone: warn
+title: Physics-informed nowcasting
+org: University of Exeter
+period: 2024
+status: research
+tone: info
 order: 3
 permalink: false
 ---
-One micro note a week, minimum. Long posts when something is worth the length.
-
+Attention-ConvLSTM research for radar precipitation nowcasting, presented at a University of Exeter meeting with the Met Office.

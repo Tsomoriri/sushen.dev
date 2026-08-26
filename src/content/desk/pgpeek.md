@@ -1,11 +1,10 @@
 ---
-title: pgpeek
-org: open source
-period: 2025 — now
+title: Personaite
+org: independent research
+period: 2024 — now
 status: in progress
 tone: warn
 order: 2
 permalink: false
 ---
-A single-binary reader for pg_stat_statements. No agent, no dashboard.
-
+AI-powered, persona-driven UX testing that turns interface screenshots into rapid, diverse and actionable product feedback.

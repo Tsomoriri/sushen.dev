@@ -1,8 +1,7 @@
 {
   "name": "Sushen",
   "domain": "sushen.dev",
-  "headline": "I build fast, boring systems.",
-  "intro": "Platform engineer. I spend my time on query paths, caches and the parts of latency nobody puts in a changelog. This site says who I am, shows what is on my desk, and keeps notes on what I am learning.",
+  "headline": "I build intelligent systems that meet real users.",
+  "intro": "AI engineer and researcher working across agentic systems, machine learning and product experimentation. I build tools that turn research into useful software—from AI-powered UX testing to physics-informed weather nowcasting.",
   "email": "hi@sushen.dev"
 }
-
