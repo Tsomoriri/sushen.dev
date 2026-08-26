@@ -1,0 +1,11 @@
+/* Elevation is mostly hairlines. Shadows are cool, low-opacity, and never
+   blurred more than 32px — a lifted sheet of paper, not a floating card. */
+:root{
+  --shadow-none:none;
+  --shadow-lift:0 1px 2px rgb(0 0 0 / 0.22);
+  --shadow-panel:0 8px 24px -12px rgb(0 0 0 / 0.45);
+  --shadow-pop:0 16px 32px -16px rgb(0 0 0 / 0.55);
+  --shadow-glass-edge:inset 0 1px 0 rgb(255 255 255 / 0.07);
+  --shadow-inset-key:inset 0 -1px 0 rgb(0 0 0 / 0.35);
+  --ring-focus:0 0 0 2px var(--bg-base),0 0 0 3px var(--focus-ring);
+}

@@ -1,0 +1,33 @@
+/* Two grids on purpose:
+   - space-*  : 4px UI grid
+   - baseline : 28px vertical rhythm for anything with type in it
+   - ch-*     : character-cell steps, for typewriter-aligned gutters */
+:root{
+  --space-0:0px;
+  --space-1:4px;
+  --space-2:8px;
+  --space-3:12px;
+  --space-4:16px;
+  --space-5:24px;
+  --space-6:32px;
+  --space-7:48px;
+  --space-8:64px;
+  --space-9:96px;
+  --space-10:128px;
+
+  --baseline:28px;
+  --baseline-2:56px;
+  --baseline-3:84px;
+
+  --ch-1:1ch;
+  --ch-2:2ch;
+  --ch-4:4ch;
+  --ch-8:8ch;
+
+  --page-gutter:var(--space-5);
+  --page-max:780px;      /* the site is one narrow column, always */
+  --page-max-wide:1100px;
+  --field-height:40px;
+  --control-height:36px;
+  --hit-min:44px;
+}

@@ -1,0 +1,12 @@
+/* Paper and metal have no big radii. 2px is the house corner;
+   pill is reserved for tags and status dots. */
+:root{
+  --radius-none:0px;
+  --radius-xs:2px;
+  --radius-sm:4px;
+  --radius-md:6px;
+  --radius-pill:999px;
+  --radius-card:var(--radius-sm);
+  --radius-control:var(--radius-xs);
+  --hairline:1px;
+}

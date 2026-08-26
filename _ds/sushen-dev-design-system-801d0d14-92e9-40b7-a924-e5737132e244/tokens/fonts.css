@@ -1,0 +1,23 @@
+/* Sushen.dev typefaces.
+   NOTE: font binaries are NOT vendored in this project (see readme.md > Fonts).
+   Families are loaded from Google Fonts; swap these @import lines for local
+   @font-face rules if you self-host. Keep the weights: we only use 400/700. */
+@import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,400;0,600;0,700;1,400&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&family=JetBrains+Mono:wght@400;500;700&display=swap");
+
+:root{
+  /* base families */
+  --font-typewriter:"Courier Prime","Courier New",ui-monospace,monospace;
+  --font-read:"Newsreader",ui-serif,Georgia,serif;
+  --font-code:"JetBrains Mono",ui-monospace,SFMono-Regular,monospace;
+  /* Atkinson Hyperlegible Next — designed by the Braille Institute for maximum
+     legibility: disambiguated 1/l/I, 0/O, unusually open apertures. Carries all
+     small UI text, where the typewriter face was costing readability. */
+  --font-legible:"Atkinson Hyperlegible Next","Atkinson Hyperlegible",system-ui,sans-serif;
+
+  /* semantic aliases */
+  --font-display:var(--font-typewriter);  /* headlines keep the typewriter voice */
+  --font-ui:var(--font-legible);           /* labels, buttons, nav, metadata */
+  --font-body:var(--font-read);            /* long-form reading */
+  --font-mono:var(--font-code);            /* data, dates, code */
+  --font-stamp:var(--font-typewriter);     /* explicit opt-in to the typewriter */
+}

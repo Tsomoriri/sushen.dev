@@ -1,0 +1,29 @@
+/* Type scale is tuned to a 28px baseline; every size below has a
+   line-height that lands on a 4px increment so the typewriter grid holds. */
+:root{
+  --text-2xs:12px;   --lh-2xs:20px;
+  --text-xs:13px;    --lh-xs:20px;
+  --text-sm:15px;    --lh-sm:24px;
+  --text-base:17px;  --lh-base:28px;
+  --text-md:20px;    --lh-md:32px;
+  --text-lg:24px;    --lh-lg:36px;
+  --text-xl:30px;    --lh-xl:40px;
+  --text-2xl:38px;   --lh-2xl:44px;
+  --text-3xl:50px;   --lh-3xl:56px;
+  --text-4xl:66px;   --lh-4xl:72px;
+
+  --weight-regular:400; /* @kind other */
+  --weight-medium:500; /* @kind other */
+  --weight-bold:700; /* @kind other */
+
+  /* typewriter faces need negative tracking at display sizes and
+     positive tracking when used as small caps labels */
+  --track-display:-0.03em; /* @kind other */
+  --track-tight:-0.015em; /* @kind other */
+  --track-normal:0em; /* @kind other */
+  --track-label:0.12em; /* @kind other */
+  --track-wide:0.18em; /* @kind other */
+
+  --prose-measure:62ch;   /* long-form column */
+  --ui-measure:44ch;      /* UI copy column */
+}

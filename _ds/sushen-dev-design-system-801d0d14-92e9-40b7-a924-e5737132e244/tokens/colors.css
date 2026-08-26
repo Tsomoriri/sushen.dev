@@ -1,0 +1,134 @@
+/* Sushen.dev palette — warm ink over cool glass.
+   Ramp is neutral-warm (paper) + neutral-cold (ink) so light and dark themes
+   read as two different materials, not one inverted. */
+:root{
+  /* paper — warm neutrals, light theme surfaces */
+  --paper-50:#FFFDF6;
+  --paper-100:#FCF5E6;
+  --paper-200:#F3E8D2;
+  --paper-300:#E4D5B8;
+
+  /* ash — mid neutrals, shared */
+  --ash-400:#B4B2A8;
+  --ash-500:#8C8A80;
+  --ash-600:#55534B;
+
+  /* ink — cold neutrals, dark theme surfaces */
+  --ink-700:#262B34;
+  --ink-800:#1C2027;
+  --ink-900:#14171C;
+  --ink-950:#0D0F13;
+
+  /* ribbon amber — the primary accent. Named for typewriter ribbon ink. */
+  --amber-200:#FFE4A8;
+  --amber-400:#FFC24D;
+  --amber-500:#FFAE2B;
+  --amber-600:#C97A0A;
+
+  /* patina — secondary accent, used for the sparkle layer and links-in-prose */
+  --patina-300:#8FE6D8;
+  --patina-400:#45CFBB;
+  --patina-600:#1E9E8C;
+
+  /* coral — the warm counter-accent (section 02, "in progress") */
+  --coral-300:#FFB0A0;
+  --coral-500:#FF7A62;
+  --coral-600:#E05540;
+
+  /* lagoon — cool bright (section 03, links in light theme) */
+  --lagoon-300:#A6DEF5;
+  --lagoon-400:#52B8E8;
+  --lagoon-600:#2582B5;
+
+  /* lilac — the playful outlier. Sparkle and selected states only. */
+  --lilac-300:#CBB6FF;
+  --lilac-500:#A186F0;
+  --lilac-600:#7A5FD0;
+
+  /* semantic hues */
+  --moss-400:#7FC26A;   /* success / shipped */
+  --rose-400:#FF7A62;   /* error / archived — same as coral-500 */
+  --slate-400:#52B8E8;  /* info / draft — same as lagoon-400 */
+
+  /* ── semantic aliases: dark is the default theme ─────────────── */
+  --bg-void:var(--ink-950);
+  --bg-base:var(--ink-900);
+  --bg-raised:var(--ink-800);
+
+  --surface-glass:rgb(255 255 255 / 0.045);
+  --surface-glass-strong:rgb(255 255 255 / 0.075);
+  --surface-card:var(--ink-800);
+  --surface-inset:rgb(0 0 0 / 0.28);
+  --surface-selected:rgb(233 162 59 / 0.12);
+
+  --border-hairline:rgb(255 255 255 / 0.10);
+  --border-strong:rgb(255 255 255 / 0.20);
+  --border-accent:var(--amber-500);
+
+  --text-primary:var(--paper-100);
+  --text-secondary:var(--ash-400);
+  --text-muted:var(--ash-500);
+  --text-inverse:var(--ink-950);
+  --text-accent:var(--amber-500);
+  --text-link:var(--patina-300);
+
+  --accent:var(--amber-500);
+  --accent-hover:var(--amber-400);
+  --accent-press:var(--amber-600);
+  --accent-contrast:var(--ink-950);
+
+  /* the playful set: section indices, tags and sparkle rotate through these.
+     accent stays marigold — these never become button fills. */
+  --accent-2:var(--coral-500);
+  --accent-3:var(--patina-400);
+  --accent-4:var(--lilac-300);
+  --accent-5:var(--lagoon-400);
+
+  --focus-ring:var(--amber-400);
+
+  --sparkle-warm:rgb(255 174 43 / 0.50);
+  --sparkle-cool:rgb(69 207 187 / 0.42);
+  --sparkle-coral:rgb(255 122 98 / 0.40);
+  --sparkle-lilac:rgb(161 134 240 / 0.36);
+
+  --status-ok:var(--moss-400);
+  --status-warn:var(--amber-500);
+  --status-err:var(--rose-400);
+  --status-info:var(--slate-400);
+}
+
+[data-theme="light"]{
+  --bg-void:var(--paper-200);
+  --bg-base:var(--paper-100);
+  --bg-raised:var(--paper-50);
+
+  --surface-glass:rgb(255 255 255 / 0.42);
+  --surface-glass-strong:rgb(255 255 255 / 0.62);
+  --surface-card:var(--paper-50);
+  --surface-inset:rgb(0 0 0 / 0.045);
+  --surface-selected:rgb(233 162 59 / 0.16);
+
+  --border-hairline:rgb(27 28 28 / 0.14);
+  --border-strong:rgb(27 28 28 / 0.28);
+
+  --text-primary:var(--ink-900);
+  --text-secondary:var(--ash-600);
+  --text-muted:var(--ash-500);
+  --text-inverse:var(--paper-50);
+  --text-accent:var(--amber-600);
+  --text-link:var(--lagoon-600);
+
+  --accent:var(--amber-600);
+  --accent-hover:#E0900F;
+  --accent-press:#A3620A;
+  --accent-contrast:var(--paper-50);
+  --accent-2:var(--coral-600);
+  --accent-3:var(--patina-600);
+  --accent-4:var(--lilac-600);
+  --accent-5:var(--lagoon-600);
+
+  --sparkle-warm:rgb(255 174 43 / 0.42);
+  --sparkle-cool:rgb(30 158 140 / 0.26);
+  --sparkle-coral:rgb(255 122 98 / 0.30);
+  --sparkle-lilac:rgb(122 95 208 / 0.20);
+}

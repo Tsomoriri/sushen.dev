@@ -1,0 +1,44 @@
+/* The three textures of the brand, all generated — no bitmaps.
+   1. grain     : SVG fractal noise, one decode, resolution independent
+   2. sparkle   : layered radial gradients, slowly drifting behind glass
+   (there is no lattice/grid layer — a ruled grid always read as a seam) */
+:root{
+  --texture-grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.42'/%3E%3C/svg%3E"); /* @kind other */
+  --grain-opacity:0.30; /* @kind other */
+  --grain-opacity-strong:0.55; /* @kind other */
+  --grain-blend:overlay; /* @kind other */
+
+  --texture-sparkle:
+    radial-gradient(closest-side at 18% 24%,var(--sparkle-warm),transparent 100%),
+    radial-gradient(closest-side at 72% 12%,var(--sparkle-cool),transparent 100%),
+    radial-gradient(closest-side at 58% 68%,var(--sparkle-coral),transparent 100%),
+    radial-gradient(closest-side at 12% 82%,var(--sparkle-cool),transparent 100%),
+    radial-gradient(closest-side at 88% 56%,var(--sparkle-lilac),transparent 100%);
+  --sparkle-size:38vmax 38vmax,26vmax 26vmax,44vmax 44vmax,30vmax 30vmax,22vmax 22vmax; /* @kind other */
+  --sparkle-blur:56px; /* @kind other */
+  --sparkle-opacity:0.55; /* @kind other */
+
+  /* old-paper glimmer: mottled warm/cool patches that rotate very slowly
+     behind the glass, reading as aged paper caught in raking light */
+  --texture-glimmer:
+    radial-gradient(38% 30% at 22% 28%,color-mix(in oklab,var(--amber-400) 22%,transparent),transparent 70%),
+    radial-gradient(30% 42% at 78% 20%,color-mix(in oklab,var(--coral-500) 18%,transparent),transparent 72%),
+    radial-gradient(46% 34% at 66% 74%,color-mix(in oklab,var(--amber-200) 14%,transparent),transparent 70%),
+    radial-gradient(34% 34% at 14% 78%,color-mix(in oklab,var(--lilac-300) 14%,transparent),transparent 74%),
+    conic-gradient(from 12deg at 50% 50%,transparent 0 18%,color-mix(in oklab,var(--amber-500) 8%,transparent) 26%,transparent 44%,color-mix(in oklab,var(--patina-600) 8%,transparent) 62%,transparent 82%); /* @kind other */
+  --glimmer-opacity:0.42; /* @kind other */
+  --glimmer-blur:70px; /* @kind other */
+  --dur-rotate:220s; /* @kind other */
+
+  --texture-baseline:repeating-linear-gradient(to bottom,var(--border-hairline) 0 1px,transparent 1px var(--baseline)); /* @kind other */
+
+  /* glass */
+  --glass-blur:14px; /* @kind other */
+  --glass-blur-strong:22px; /* @kind other */
+  --glass-saturate:1.15; /* @kind other */
+  --glass-filter:blur(var(--glass-blur)) saturate(var(--glass-saturate)); /* @kind other */
+
+  /* content protection over textured backdrops */
+  --scrim-top:linear-gradient(to bottom,var(--bg-base) 0%,transparent 100%); /* @kind other */
+  --scrim-bottom:linear-gradient(to top,var(--bg-base) 0%,transparent 100%); /* @kind other */
+}
