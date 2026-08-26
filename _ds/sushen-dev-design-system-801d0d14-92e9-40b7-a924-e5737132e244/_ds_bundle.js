@@ -997,7 +997,7 @@ function ThemeToggle({
   style,
   ...rest
 }) {
-  const [internal, setInternal] = React.useState(value || "dark");
+  const [internal, setInternal] = React.useState(value || "light");
   const active = value || internal;
   const set = v => {
     setInternal(v);

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title">
+  <title id="title">Anonymous profile</title>
+  <circle cx="80" cy="80" r="67" fill="none" stroke="#8C8A80" stroke-width="2" stroke-dasharray="3 6"/>
+  <circle cx="80" cy="59" r="24" fill="#8C8A80"/>
+  <path d="M35 132c4-29 21-44 45-44s41 15 45 44" fill="#8C8A80"/>
+  <path d="M51 132c3-19 13-29 29-29s26 10 29 29" fill="#E4D5B8" opacity=".35"/>
+</svg>

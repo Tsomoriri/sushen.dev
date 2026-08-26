@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -38,7 +38,6 @@ html,body{margin:0}a{color:var(--text-link);text-decoration:none}a:hover{color:v
 .credential-card::after{content:"+";position:absolute;right:18px;top:12px;font:var(--text-xl)/1 var(--font-display);color:var(--border-strong);transition:color var(--dur-base) var(--ease-mech),transform var(--dur-base) var(--ease-mech)}
 .credential-card:hover::after{color:var(--accent-4);transform:rotate(90deg)}
 .credential-logo{width:100%;height:152px;object-fit:contain;padding:var(--space-3);background:rgb(0 0 0/.14);border:1px solid var(--border-hairline);filter:saturate(.82);transition:filter var(--dur-base) var(--ease-mech),transform var(--dur-base) var(--ease-mech)}
-.credential-logo--portrait{object-fit:contain;object-position:center;padding:var(--space-2);background:linear-gradient(135deg,rgb(255 255 255/.08),rgb(255 255 255/.02))}
 .credential-card:hover .credential-logo{filter:saturate(1);transform:scale(1.02)}
 [data-theme="light"] .credential-logo{background:rgb(255 255 255/.38)}
 .credential-placeholder{width:52px;height:52px;display:grid;place-items:center;border:1px dashed var(--border-strong);font:700 var(--text-lg)/1 var(--font-display);color:var(--text-muted)}
