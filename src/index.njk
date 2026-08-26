@@ -18,7 +18,13 @@ html,body{margin:0}a{color:var(--text-link);text-decoration:none}a:hover{color:v
 .site-section>div:first-child{margin-bottom:var(--space-7)!important}
 .site-section>div:first-child h2{font-size:clamp(22px,2.2vw,32px)!important;line-height:1.1!important;letter-spacing:.08em!important;color:var(--text-primary)!important}
 .site-section>div:first-child>span:first-child{font-size:var(--text-sm)!important}
-.site-mark{display:block;width:104px;height:104px;object-fit:contain;background:transparent;filter:drop-shadow(0 8px 18px rgb(0 0 0/.22))}
+.site-mark-wrap{display:block;width:104px;height:104px;flex:0 0 auto}
+.site-mark{display:block;width:100%;height:100%;object-fit:contain;background:transparent}
+.site-mark--dark{mix-blend-mode:screen}.site-mark--light{display:none}
+[data-theme="light"] .site-mark--dark{display:none}[data-theme="light"] .site-mark--light{display:block}
+.site-nav a{position:relative;transition:color var(--dur-base) var(--ease-mech)}
+.site-nav a::after{content:"";position:absolute;left:50%;bottom:-7px;width:4px;height:4px;border-radius:50%;background:var(--accent);opacity:0;transform:translate(-50%,4px);transition:opacity var(--dur-base) var(--ease-mech),transform var(--dur-base) var(--ease-mech)}
+.site-nav a.is-active{color:var(--accent)!important}.site-nav a.is-active::after{opacity:1;transform:translate(-50%,0)}
 .credential-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--space-4)}
 .credential-card{position:relative;min-height:148px;padding:var(--space-5);display:flex;flex-direction:column;justify-content:space-between;border:1px solid var(--border-hairline);background:linear-gradient(135deg,var(--surface-glass-strong),var(--surface-glass));box-shadow:var(--shadow-glass-edge);overflow:hidden;transition:transform var(--dur-base) var(--ease-mech),border-color var(--dur-base) var(--ease-mech)}
 .credential-card:hover{transform:translateY(-3px);border-color:color-mix(in oklab,var(--accent-4) 48%,var(--border-hairline))}
@@ -37,14 +43,14 @@ html,body{margin:0}a{color:var(--text-link);text-decoration:none}a:hover{color:v
 .site-section{animation:section-enter .55s var(--ease-out) both}
 .site-section:nth-child(2){animation-delay:.08s}.site-section:nth-child(3){animation-delay:.16s}.site-section:nth-child(4){animation-delay:.24s}
 @media(max-width:900px){.credential-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:600px){.site-main{gap:84px}.credential-grid{grid-template-columns:1fr}.note-grid{grid-template-columns:1fr!important}.site-mark{width:80px;height:80px}}
+@media(max-width:600px){.site-main{gap:84px}.credential-grid{grid-template-columns:1fr}.site-mark-wrap{width:80px;height:80px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 </style></helmet>
 <x-import component-from-global-scope="SushenDevDesignSystem_801d0d.GrainField" min-height="100vh" hint-size="100%,100vh">
 <div style="position:sticky;top:0;z-index:5;backdrop-filter:blur(18px) saturate(1.25);-webkit-backdrop-filter:blur(18px) saturate(1.25);background:linear-gradient(180deg,color-mix(in oklab,var(--bg-void) 62%,transparent),color-mix(in oklab,var(--bg-base) 34%,transparent) 62%,transparent);border:0;box-shadow:inset 0 1px 0 rgb(255 255 255 / 0.07);-webkit-mask-image:linear-gradient(180deg,#000 0%,#000 62%,transparent 100%);mask-image:linear-gradient(180deg,#000 0%,#000 62%,transparent 100%)">
 <div class="site-width" style="height:60px;display:flex;align-items:center;justify-content:space-between;gap:var(--space-4)">
 <div style="display:flex;align-items:baseline;gap:3px"><span style="font-family:var(--font-display);font-weight:700;font-size:var(--text-sm);letter-spacing:var(--track-tight);color:var(--text-primary)">sushen</span><span style="font-family:var(--font-mono);font-size:var(--text-sm);color:var(--accent)">.dev</span></div>
-<div style="display:flex;align-items:center;gap:var(--space-5);font-family:var(--font-ui);font-size:var(--text-xs);letter-spacing:var(--track-label);text-transform:uppercase"><a href="#who" style="color:var(--accent);border:0">hello</a><a href="#doing" style="color:var(--text-muted);border:0">desk</a><a href="#learning" style="color:var(--text-muted);border:0">notes</a><a href="#credentials" style="color:var(--text-muted);border:0">proof</a></div>
+<div class="site-nav" style="display:flex;align-items:center;gap:var(--space-5);font-family:var(--font-ui);font-size:var(--text-xs);letter-spacing:var(--track-label);text-transform:uppercase"><a class="is-active" href="#who" style="color:var(--accent);border:0">hello</a><a href="#doing" style="color:var(--text-muted);border:0">desk</a><a href="#learning" style="color:var(--text-muted);border:0">notes</a><a href="#credentials" style="color:var(--text-muted);border:0">proof</a></div>
 </div></div>
 <div class="site-width site-main">
 
@@ -74,10 +80,6 @@ html,body{margin:0}a{color:var(--text-link);text-decoration:none}a:hover{color:v
 <x-import component-from-global-scope="SushenDevDesignSystem_801d0d.PostRow" date="{{ post.data.date | htmlDate }}" title="{{ post.data.title }}" kind="{{ post.data.kind or 'post' }}" reading-time="{{ post.data.readingTime or '' }}" href="{{ post.url }}" hint-size="100%,46px"></x-import>
 {% endfor %}
 </div>
-<div class="note-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4);margin-top:var(--space-6)">
-<x-import component-from-global-scope="SushenDevDesignSystem_801d0d.NoteCard" date="2026-04-02" hint-size="100%,120px">WAL mode changes the failure mode: readers stop blocking, and checkpoint timing becomes the thing to watch.</x-import>
-<x-import component-from-global-scope="SushenDevDesignSystem_801d0d.NoteCard" date="2026-03-28" hint-size="100%,120px">Put context.WithTimeout on the caller. The handler does not know how patient the user is.</x-import>
-</div>
 </section>
 
 <section id="credentials" class="site-section">
@@ -95,7 +97,10 @@ html,body{margin:0}a{color:var(--text-link);text-decoration:none}a:hover{color:v
 <div style="display:grid;gap:var(--space-6)">
 <x-import component-from-global-scope="SushenDevDesignSystem_801d0d.Divider" dashed="{{ true }}" label="end of file" hint-size="100%,16px"></x-import>
 <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:var(--space-8);flex-wrap:wrap">
-<img class="site-mark" src="/assets/logo-small.png" alt="Sushen personal mark" width="128" height="128">
+<span class="site-mark-wrap">
+  <img class="site-mark site-mark--dark" src="/assets/logo-dark.png" alt="Sushen personal mark" width="1254" height="1254">
+  <img class="site-mark site-mark--light" src="/assets/logo-light.png" alt="Sushen personal mark" width="1254" height="1254">
+</span>
 <x-import component-from-global-scope="SushenDevDesignSystem_801d0d.MetaList" items="{% raw %}{{ meta }}{% endraw %}" style="min-width:260px;flex:1" hint-size="260px,88px"></x-import>
 <x-import component-from-global-scope="SushenDevDesignSystem_801d0d.ThemeToggle" hint-size="120px,24px"></x-import>
 </div>
@@ -117,6 +122,26 @@ class Component extends DCLogic {
     };
   }
 }
+</script>
+<script>
+(() => {
+  const init = () => {
+    const sections = [...document.querySelectorAll('.site-section')];
+    const links = [...document.querySelectorAll('.site-nav a')];
+    if (!sections.length || !links.length) return false;
+    const observer = new IntersectionObserver((entries) => {
+      const visible = entries.filter(entry => entry.isIntersecting).sort((a,b) => b.intersectionRatio - a.intersectionRatio)[0];
+      if (!visible) return;
+      links.forEach(link => link.classList.toggle('is-active', link.hash === `#${visible.target.id}`));
+    }, {rootMargin:'-30% 0px -55%', threshold:[0,.2,.5]});
+    sections.forEach(section => observer.observe(section));
+    return true;
+  };
+  if (!init()) {
+    const watcher = new MutationObserver(() => { if (init()) watcher.disconnect(); });
+    watcher.observe(document.body, {childList:true, subtree:true});
+  }
+})();
 </script>
 </body>
 </html>
