@@ -1,29 +1,141 @@
 # sushen.dev
 
-Personal website for Sushen, built with Eleventy and hosted as static files on Vercel.
+Personal research and portfolio website built with [Eleventy](https://www.11ty.dev/) and deployed as static files on Vercel.
 
 ## Local development
 
-Install dependencies and start the Eleventy development server:
+Requirements: Node.js 22 or newer and npm.
 
 ```sh
-npm install
+npm ci
 npm run dev
 ```
 
-Then open <http://localhost:4173>.
+Open <http://localhost:4173>. The development server watches content and templates and rebuilds automatically.
 
-## Publishing a field note
+Before pushing a change, run the production build:
 
-1. Copy an existing file in `src/content/notes/`.
-2. Set its title, date, tags, reading time, and summary in the front matter.
-3. Write the post in Markdown below the front matter.
-4. Run `npm run dev` to preview it, then commit and push to `main`.
+```sh
+npm run build
+```
 
-The note automatically appears on the homepage and is published at `/notes/<filename>/`. Set `draft: true` to keep a note out of production.
+The generated site is written to `_site/`. That directory is build output and is not committed.
 
-Desk entries work the same way in `src/content/desk/`. Homepage identity copy lives in `src/_data/site.json`, and badge/logo entries live in `src/_data/credentials.json`.
+## Writing a Field Note
 
-## Deployment
+Create a Markdown file in `src/content/notes/`. Its filename becomes its public URL:
 
-Import this GitHub repository into Vercel with the framework preset set to **Other**. `vercel.json` runs `npm run build` and serves the generated `_site` directory. Every push to `main` becomes a production deployment; pull requests receive preview deployments.
+```text
+src/content/notes/physics-informed-nowcasting.md
+                         ↓
+https://sushen.dev/notes/physics-informed-nowcasting/
+```
+
+Start with this front matter:
+
+````markdown
+---
+layout: layouts/note.njk
+title: A clear article title
+date: 2026-08-26
+tags: [machine-learning, research]
+readingTime: 5 min
+summary: One sentence shown beneath the article title.
+sourceUrl: https://www.linkedin.com/posts/...
+draft: false
+---
+
+Write the article here using Markdown.
+
+## A section heading
+
+Inline code looks like `context.Context`.
+
+```go
+func main() {
+    fmt.Println("Fenced code blocks are formatted automatically")
+}
+```
+````
+
+Front-matter fields:
+
+| Field | Required | Purpose |
+| --- | --- | --- |
+| `layout` | Yes | Use `layouts/note.njk` for Field Notes. |
+| `title` | Yes | Homepage link and article heading. |
+| `date` | Yes | Sort order and published date, in `YYYY-MM-DD`. |
+| `tags` | Recommended | Topics associated with the note. |
+| `readingTime` | Optional | Human-readable estimate such as `5 min`. |
+| `kind` | Optional | Set to `note` for shorter entries; otherwise it is a post. |
+| `summary` | Recommended | Short article introduction. |
+| `sourceUrl` | Optional | Original LinkedIn post or external source. |
+| `draft` | Optional | Set to `true` to exclude the article from production. |
+
+Eleventy automatically adds non-draft notes to the homepage, sorts them newest-first and creates `/notes/<filename>/`. Code blocks receive the site styling and an interactive copy button.
+
+## Other editable content
+
+- Homepage identity and email: `src/_data/site.json`
+- Desk/current-work cards: `src/content/desk/*.md`
+- Credentials and badge cards: `src/_data/credentials.json`
+- Credential images and logos: `assets/`
+- Homepage structure and visual styling: `src/index.njk`
+- Article layout: `src/_includes/layouts/note.njk`
+
+## CI flow
+
+GitHub Actions runs `.github/workflows/ci.yml` for every pull request and every push to `main`.
+
+```text
+push or pull request
+        ↓
+checkout repository
+        ↓
+Node.js 22 + npm cache
+        ↓
+npm ci
+        ↓
+npm run build
+```
+
+A failed dependency installation or Eleventy build makes CI fail. Keep a pull request unmerged until this check passes.
+
+## Vercel deployment flow
+
+Import the GitHub repository into Vercel using:
+
+- Framework preset: **Other**
+- Build command: `npm run build`
+- Output directory: `_site`
+- Production branch: `main`
+
+The build and output values are also declared in `vercel.json`.
+
+```text
+feature branch / pull request
+        ↓
+GitHub Actions build check
+        ↓
+Vercel preview deployment
+        ↓
+review preview URL
+        ↓
+merge to main
+        ↓
+GitHub Actions build + Vercel production deployment
+        ↓
+sushen.dev
+```
+
+Vercel serves the generated HTML, CSS, JavaScript and images from its CDN. There is no database, server function or runtime CMS.
+
+## Recommended publishing workflow
+
+1. Create a branch: `git switch -c post/article-slug`.
+2. Add the Markdown file and preview with `npm run dev`.
+3. Validate with `npm run build`.
+4. Commit and push the branch.
+5. Open a pull request and review its Vercel preview.
+6. Merge only after CI passes and the preview looks correct.
+7. Vercel deploys the merged `main` commit to production.

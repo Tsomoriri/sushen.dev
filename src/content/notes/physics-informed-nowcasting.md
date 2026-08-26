@@ -5,6 +5,7 @@ date: 2024-11-08
 tags: [machine-learning, weather, research]
 readingTime: 5 min
 summary: Combining advection physics with Attention-ConvLSTM models can improve short-term precipitation forecasts.
+sourceUrl: https://www.linkedin.com/posts/sushenyadav_unveiling-the-power-of-physics-informed-attention-convlstm-activity-7280265477128433665-Jwbw
 ---
 
 Radar extrapolation is a spatiotemporal prediction problem: given a sequence of recent radar frames, estimate where precipitation will move next. ConvLSTM models can learn these dynamics, but purely data-driven predictions do not always respect the physical structure of the system.
@@ -17,6 +18,4 @@ radar sequence → ConvLSTM → attention → forecast
 ```
 
 Across the experiments, the physics-informed variants improved SSIM and MAE over the baseline ConvLSTM and generalized more reliably to complex motion.
-
-[See the research posts on LinkedIn](https://www.linkedin.com/in/sushenyadav/recent-activity/all/).
 

@@ -16,6 +16,7 @@
   .note-article{max-width:72ch;margin:var(--space-8) auto 0}
   .note-article h1{font:700 clamp(38px,6vw,66px)/1.05 var(--font-display);letter-spacing:var(--track-display);margin:var(--space-4) 0}
   .note-meta{font:var(--text-xs)/var(--lh-xs) var(--font-mono);color:var(--text-muted)}
+  .note-source{display:inline-flex;margin-top:var(--space-7);font:700 var(--text-xs)/var(--lh-xs) var(--font-ui);letter-spacing:var(--track-label);text-transform:uppercase}
   .note-body{font:var(--text-md)/var(--lh-md) var(--font-body);color:var(--text-secondary);margin-top:var(--space-7)}
   .note-body h2{font-family:var(--font-display);color:var(--text-primary);margin-top:var(--space-8)}
   .note-body :not(pre)>code{padding:2px 6px;border:1px solid var(--border-hairline);background:var(--surface-inset);color:var(--text-primary);border-radius:var(--radius-xs)}
@@ -34,6 +35,7 @@
       <h1>{{ title }}</h1>
       {% if summary %}<p style="font:var(--text-lg)/var(--lh-lg) var(--font-body);color:var(--text-secondary)">{{ summary }}</p>{% endif %}
       <div class="note-body">{{ content | safe }}</div>
+      {% if sourceUrl %}<a class="note-source" href="{{ sourceUrl }}" target="_blank" rel="noopener noreferrer">View original LinkedIn post ↗</a>{% endif %}
     </article>
   </main>
 </x-import>
