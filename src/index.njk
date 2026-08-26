@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ site.domain }} — personal research site</title>
+<meta name="description" content="{{ site.intro }}">
+<script src="/support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Personal site — sushen.dev" description="One-column typewriter site over the grainy-glass backdrop: who I am, what I'm doing, what I'm learning." -->
+<helmet><script src="/ds-base.js"></script><style>
+html,body{margin:0}a{color:var(--text-link);text-decoration:none}a:hover{color:var(--accent)}
+.site-width{width:min(100%,1360px);margin-inline:auto;padding-inline:clamp(20px,4vw,64px)}
+.site-main{padding-top:var(--baseline-3);padding-bottom:var(--space-9);display:grid;gap:clamp(84px,10vw,140px)}
+.site-section{scroll-margin-top:88px}
+.site-section>div:first-child{margin-bottom:var(--space-7)!important}
+.site-section>div:first-child h2{font-size:clamp(22px,2.2vw,32px)!important;line-height:1.1!important;letter-spacing:.08em!important;color:var(--text-primary)!important}
+.site-section>div:first-child>span:first-child{font-size:var(--text-sm)!important}
+.site-mark{display:block;width:104px;height:104px;object-fit:contain;background:transparent;filter:drop-shadow(0 8px 18px rgb(0 0 0/.22))}
+.credential-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--space-4)}
+.credential-card{position:relative;min-height:148px;padding:var(--space-5);display:flex;flex-direction:column;justify-content:space-between;border:1px solid var(--border-hairline);background:linear-gradient(135deg,var(--surface-glass-strong),var(--surface-glass));box-shadow:var(--shadow-glass-edge);overflow:hidden;transition:transform var(--dur-base) var(--ease-mech),border-color var(--dur-base) var(--ease-mech)}
+.credential-card:hover{transform:translateY(-3px);border-color:color-mix(in oklab,var(--accent-4) 48%,var(--border-hairline))}
+.credential-card::after{content:"+";position:absolute;right:18px;top:12px;font:var(--text-xl)/1 var(--font-display);color:var(--border-strong);transition:color var(--dur-base) var(--ease-mech),transform var(--dur-base) var(--ease-mech)}
+.credential-card:hover::after{color:var(--accent-4);transform:rotate(90deg)}
+.credential-logo{width:52px;height:52px;object-fit:contain;filter:grayscale(1);opacity:.82}
+.credential-placeholder{width:52px;height:52px;display:grid;place-items:center;border:1px dashed var(--border-strong);font:700 var(--text-lg)/1 var(--font-display);color:var(--text-muted)}
+.credential-label{font:700 var(--text-base)/var(--lh-base) var(--font-ui);color:var(--text-primary)}
+.credential-kind{font:var(--text-2xs)/var(--lh-2xs) var(--font-mono);letter-spacing:var(--track-label);text-transform:uppercase;color:var(--text-muted)}
+.live-rail{position:relative}
+.live-rail::before{content:"";position:absolute;left:-18px;top:0;bottom:0;width:1px;background:linear-gradient(transparent,var(--accent-2),var(--accent-3),transparent);opacity:.36;animation:rail-breathe 4s var(--ease-mech) infinite}
+.status-dot--live{position:relative;animation:live-dot 1.8s var(--ease-mech) infinite}
+@keyframes live-dot{0%,100%{box-shadow:0 0 0 3px color-mix(in oklab,var(--status-ok) 18%,transparent),0 0 0 0 color-mix(in oklab,var(--status-ok) 30%,transparent)}50%{box-shadow:0 0 0 3px color-mix(in oklab,var(--status-ok) 30%,transparent),0 0 0 8px transparent}}
+@keyframes rail-breathe{0%,100%{opacity:.18;transform:scaleY(.82)}50%{opacity:.55;transform:scaleY(1)}}
+@keyframes section-enter{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.site-section{animation:section-enter .55s var(--ease-out) both}
+.site-section:nth-child(2){animation-delay:.08s}.site-section:nth-child(3){animation-delay:.16s}.site-section:nth-child(4){animation-delay:.24s}
+@media(max-width:900px){.credential-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.site-main{gap:84px}.credential-grid{grid-template-columns:1fr}.note-grid{grid-template-columns:1fr!important}.site-mark{width:80px;height:80px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style></helmet>
+<x-import component-from-global-scope="SushenDevDesignSystem_801d0d.GrainField" min-height="100vh" hint-size="100%,100vh">
+<div style="position:sticky;top:0;z-index:5;backdrop-filter:blur(18px) saturate(1.25);-webkit-backdrop-filter:blur(18px) saturate(1.25);background:linear-gradient(180deg,color-mix(in oklab,var(--bg-void) 62%,transparent),color-mix(in oklab,var(--bg-base) 34%,transparent) 62%,transparent);border:0;box-shadow:inset 0 1px 0 rgb(255 255 255 / 0.07);-webkit-mask-image:linear-gradient(180deg,#000 0%,#000 62%,transparent 100%);mask-image:linear-gradient(180deg,#000 0%,#000 62%,transparent 100%)">
+<div class="site-width" style="height:60px;display:flex;align-items:center;justify-content:space-between;gap:var(--space-4)">
+<div style="display:flex;align-items:baseline;gap:3px"><span style="font-family:var(--font-display);font-weight:700;font-size:var(--text-sm);letter-spacing:var(--track-tight);color:var(--text-primary)">sushen</span><span style="font-family:var(--font-mono);font-size:var(--text-sm);color:var(--accent)">.dev</span></div>
+<div style="display:flex;align-items:center;gap:var(--space-5);font-family:var(--font-ui);font-size:var(--text-xs);letter-spacing:var(--track-label);text-transform:uppercase"><a href="#who" style="color:var(--accent);border:0">hello</a><a href="#doing" style="color:var(--text-muted);border:0">desk</a><a href="#learning" style="color:var(--text-muted);border:0">notes</a><a href="#credentials" style="color:var(--text-muted);border:0">proof</a></div>
+</div></div>
+<div class="site-width site-main">
+
+<section id="who" class="site-section">
+<x-import component-from-global-scope="SushenDevDesignSystem_801d0d.SectionHeader" index="1" hue="amber" hint-size="100%,28px">Hello there</x-import>
+<x-import component-from-global-scope="SushenDevDesignSystem_801d0d.GlassPanel" padding="lg" strong="{{ true }}" hint-size="100%,240px">
+<h1 style="margin:0;font-family:var(--font-display);font-size:clamp(44px,7vw,82px);line-height:1.02;font-weight:700;letter-spacing:var(--track-display);color:var(--text-primary);max-width:14ch">{{ site.headline }}</h1>
+<p style="margin:var(--space-5) 0 0;max-width:var(--prose-measure);font-family:var(--font-body);font-size:var(--text-md);line-height:var(--lh-md);color:var(--text-secondary);text-wrap:pretty">{{ site.intro }}</p>
+<div style="display:flex;gap:var(--space-3);margin-top:var(--space-6);flex-wrap:wrap">
+<x-import component-from-global-scope="SushenDevDesignSystem_801d0d.Button" variant="primary" icon-right="arrow-right" href="#learning" hint-size="180px,34px">Read the writing</x-import>
+<x-import component-from-global-scope="SushenDevDesignSystem_801d0d.Button" variant="secondary" icon-left="mail" href="mailto:{{ site.email }}" hint-size="140px,34px">Say hello</x-import>
+</div>
+</x-import>
+</section>
+
+<section id="doing" class="site-section live-rail">
+<x-import component-from-global-scope="SushenDevDesignSystem_801d0d.SectionHeader" index="2" hue="coral" hint-size="100%,28px">On my desk</x-import>
+{% for item in collections.desk %}
+<x-import component-from-global-scope="SushenDevDesignSystem_801d0d.StatusRow" title="{{ item.data.title }}" org="{{ item.data.org }}" period="{{ item.data.period }}" status="{{ item.data.status }}" tone="{{ item.data.tone }}" hint-size="100%,84px">{{ item.content | safe }}</x-import>
+{% endfor %}
+</section>
+
+<section id="learning" class="site-section">
+<x-import component-from-global-scope="SushenDevDesignSystem_801d0d.SectionHeader" index="3" hue="teal" hint-size="100%,28px">Field notes</x-import>
+<div>
+{% for post in collections.notes %}
+<x-import component-from-global-scope="SushenDevDesignSystem_801d0d.PostRow" date="{{ post.data.date | htmlDate }}" title="{{ post.data.title }}" kind="{{ post.data.kind or 'post' }}" reading-time="{{ post.data.readingTime or '' }}" href="{{ post.url }}" hint-size="100%,46px"></x-import>
+{% endfor %}
+</div>
+<div class="note-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4);margin-top:var(--space-6)">
+<x-import component-from-global-scope="SushenDevDesignSystem_801d0d.NoteCard" date="2026-04-02" hint-size="100%,120px">WAL mode changes the failure mode: readers stop blocking, and checkpoint timing becomes the thing to watch.</x-import>
+<x-import component-from-global-scope="SushenDevDesignSystem_801d0d.NoteCard" date="2026-03-28" hint-size="100%,120px">Put context.WithTimeout on the caller. The handler does not know how patient the user is.</x-import>
+</div>
+</section>
+
+<section id="credentials" class="site-section">
+<x-import component-from-global-scope="SushenDevDesignSystem_801d0d.SectionHeader" index="4" hue="lilac" hint-size="100%,28px">Signals &amp; credentials</x-import>
+<div class="credential-grid">
+{% for credential in credentials %}
+  <a class="credential-card" href="{{ credential.href }}" aria-label="{{ credential.label }} — {{ credential.kind }}">
+    {% if credential.image %}<img class="credential-logo" src="{{ credential.image }}" alt="">{% else %}<span class="credential-placeholder" aria-hidden="true">0{{ loop.index }}</span>{% endif %}
+    <span><span class="credential-label">{{ credential.label }}</span><br><span class="credential-kind">{{ credential.kind }}</span></span>
+  </a>
+{% endfor %}
+</div>
+</section>
+
+<div style="display:grid;gap:var(--space-6)">
+<x-import component-from-global-scope="SushenDevDesignSystem_801d0d.Divider" dashed="{{ true }}" label="end of file" hint-size="100%,16px"></x-import>
+<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:var(--space-8);flex-wrap:wrap">
+<img class="site-mark" src="/assets/logo-small.png" alt="Sushen personal mark" width="128" height="128">
+<x-import component-from-global-scope="SushenDevDesignSystem_801d0d.MetaList" items="{% raw %}{{ meta }}{% endraw %}" style="min-width:260px;flex:1" hint-size="260px,88px"></x-import>
+<x-import component-from-global-scope="SushenDevDesignSystem_801d0d.ThemeToggle" hint-size="120px,24px"></x-import>
+</div>
+</div>
+
+</div>
+</x-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      meta: [
+        { label: "location", value: "Bengaluru, IN" },
+        { label: "stack", value: "go · postgres · htmx" },
+        { label: "reply time", value: "~2 days" },
+        { label: "page weight", value: "41.2 kB" },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

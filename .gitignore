@@ -1,6 +1,6 @@
 .DS_Store
 .vercel
 node_modules
+_site
 *.zip
 .thumbnail
-

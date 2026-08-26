@@ -151,6 +151,7 @@ function Badge({
       ...style
     }
   }, rest), /*#__PURE__*/React.createElement("span", {
+    className: pulse ? "status-dot status-dot--live" : "status-dot",
     style: {
       width: 7,
       height: 7,

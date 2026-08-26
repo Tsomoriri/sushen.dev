@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title }} — sushen.dev</title>
+  <script src="/support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet><script src="/ds-base.js"></script><style>
+  html,body{margin:0} a{color:var(--text-link);text-decoration:none}
+  .note-shell{width:min(100%,1360px);margin:0 auto;padding:var(--space-8) clamp(20px,4vw,64px) var(--space-10)}
+  .note-back{font:700 var(--text-xs)/1 var(--font-ui);letter-spacing:var(--track-label);text-transform:uppercase}
+  .note-article{max-width:72ch;margin:var(--space-8) auto 0}
+  .note-article h1{font:700 clamp(38px,6vw,66px)/1.05 var(--font-display);letter-spacing:var(--track-display);margin:var(--space-4) 0}
+  .note-meta{font:var(--text-xs)/var(--lh-xs) var(--font-mono);color:var(--text-muted)}
+  .note-body{font:var(--text-md)/var(--lh-md) var(--font-body);color:var(--text-secondary);margin-top:var(--space-7)}
+  .note-body h2{font-family:var(--font-display);color:var(--text-primary);margin-top:var(--space-8)}
+  .note-body code{color:var(--text-primary)}
+  @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+</style></helmet>
+<x-import component-from-global-scope="SushenDevDesignSystem_801d0d.GrainField" min-height="100vh" hint-size="100%,100vh">
+  <main class="note-shell">
+    <a class="note-back" href="/#learning">← field notes</a>
+    <article class="note-article">
+      <div class="note-meta">{{ date | htmlDate }} · {{ readingTime or "note" }}</div>
+      <h1>{{ title }}</h1>
+      {% if summary %}<p style="font:var(--text-lg)/var(--lh-lg) var(--font-body);color:var(--text-secondary)">{{ summary }}</p>{% endif %}
+      <div class="note-body">{{ content | safe }}</div>
+    </article>
+  </main>
+</x-import>
+</x-dc>
+</body>
+</html>
+
