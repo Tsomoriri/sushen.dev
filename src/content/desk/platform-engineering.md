@@ -1,10 +1,10 @@
 ---
-title: Building agentic systems
-org: Agential
+title: Building applied AI systems
+org: BKT Tires
 period: now
 status: currently
 tone: ok
 order: 1
 permalink: false
 ---
-Working on practical systems built around LLM-based agents and the infrastructure that makes them useful.
+Working on practical AI systems at BKT Tires, with a focus on turning research and emerging technology into useful products.

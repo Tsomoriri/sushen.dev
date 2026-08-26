@@ -18,10 +18,12 @@ html,body{margin:0}a{color:var(--text-link);text-decoration:none}a:hover{color:v
 .site-section>div:first-child{margin-bottom:var(--space-7)!important}
 .site-section>div:first-child h2{font-size:clamp(22px,2.2vw,32px)!important;line-height:1.1!important;letter-spacing:.08em!important;color:var(--text-primary)!important}
 .site-section>div:first-child>span:first-child{font-size:var(--text-sm)!important}
-.site-mark-wrap{display:block;width:104px;height:104px;flex:0 0 auto}
-.site-mark{display:block;width:100%;height:100%;object-fit:contain;background:transparent}
-.site-mark--dark{mix-blend-mode:screen}.site-mark--light{display:none}
-[data-theme="light"] .site-mark--dark{display:none}[data-theme="light"] .site-mark--light{display:block}
+.site-mark{display:block;width:104px;height:104px;flex:0 0 auto;background:var(--text-primary);-webkit-mask:url('/assets/logo-light.png') center/contain no-repeat;mask:url('/assets/logo-light.png') center/contain no-repeat;transition:background var(--dur-base) var(--ease-mech)}
+.header-wordmark{display:flex;align-items:baseline;gap:4px;border:0!important}
+.header-wordmark strong{font:700 clamp(18px,2vw,24px)/1 var(--font-display);letter-spacing:var(--track-tight);color:var(--text-primary)}
+.header-wordmark span{font:var(--text-base)/1 var(--font-mono);color:var(--accent)}
+.hero-domain{margin:0;font:700 clamp(64px,13vw,168px)/.84 var(--font-display);letter-spacing:-.075em;color:var(--text-primary);white-space:nowrap}
+.hero-statement{margin:var(--space-7) 0 0;max-width:18ch;font:700 clamp(28px,4vw,50px)/1.08 var(--font-display);letter-spacing:var(--track-display);color:var(--text-primary)}
 .site-nav a{position:relative;transition:color var(--dur-base) var(--ease-mech)}
 .site-nav a::after{content:"";position:absolute;left:50%;bottom:-7px;width:4px;height:4px;border-radius:50%;background:var(--accent);opacity:0;transform:translate(-50%,4px);transition:opacity var(--dur-base) var(--ease-mech),transform var(--dur-base) var(--ease-mech)}
 .site-nav a.is-active{color:var(--accent)!important}.site-nav a.is-active::after{opacity:1;transform:translate(-50%,0)}
@@ -45,13 +47,13 @@ html,body{margin:0}a{color:var(--text-link);text-decoration:none}a:hover{color:v
 .site-section{animation:section-enter .55s var(--ease-out) both}
 .site-section:nth-child(2){animation-delay:.08s}.site-section:nth-child(3){animation-delay:.16s}.site-section:nth-child(4){animation-delay:.24s}
 @media(max-width:900px){.credential-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:600px){.site-main{gap:84px}.credential-grid{grid-template-columns:1fr}.site-mark-wrap{width:80px;height:80px}}
+@media(max-width:600px){.site-main{gap:84px}.credential-grid{grid-template-columns:1fr}.site-mark{width:80px;height:80px}.hero-domain{white-space:normal;font-size:clamp(56px,20vw,92px)}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 </style></helmet>
 <x-import component-from-global-scope="SushenDevDesignSystem_801d0d.GrainField" min-height="100vh" hint-size="100%,100vh">
 <div style="position:sticky;top:0;z-index:5;backdrop-filter:blur(18px) saturate(1.25);-webkit-backdrop-filter:blur(18px) saturate(1.25);background:linear-gradient(180deg,color-mix(in oklab,var(--bg-void) 62%,transparent),color-mix(in oklab,var(--bg-base) 34%,transparent) 62%,transparent);border:0;box-shadow:inset 0 1px 0 rgb(255 255 255 / 0.07);-webkit-mask-image:linear-gradient(180deg,#000 0%,#000 62%,transparent 100%);mask-image:linear-gradient(180deg,#000 0%,#000 62%,transparent 100%)">
 <div class="site-width" style="height:60px;display:flex;align-items:center;justify-content:space-between;gap:var(--space-4)">
-<div style="display:flex;align-items:baseline;gap:3px"><span style="font-family:var(--font-display);font-weight:700;font-size:var(--text-sm);letter-spacing:var(--track-tight);color:var(--text-primary)">sushen</span><span style="font-family:var(--font-mono);font-size:var(--text-sm);color:var(--accent)">.dev</span></div>
+<a class="header-wordmark" href="#who" aria-label="sushen.dev home"><strong>sushen</strong><span>.dev</span></a>
 <div class="site-nav" style="display:flex;align-items:center;gap:var(--space-5);font-family:var(--font-ui);font-size:var(--text-xs);letter-spacing:var(--track-label);text-transform:uppercase"><a class="is-active" href="#who" style="color:var(--accent);border:0">hello</a><a href="#doing" style="color:var(--text-muted);border:0">desk</a><a href="#learning" style="color:var(--text-muted);border:0">notes</a><a href="#credentials" style="color:var(--text-muted);border:0">proof</a></div>
 </div></div>
 <div class="site-width site-main">
@@ -59,7 +61,8 @@ html,body{margin:0}a{color:var(--text-link);text-decoration:none}a:hover{color:v
 <section id="who" class="site-section">
 <x-import component-from-global-scope="SushenDevDesignSystem_801d0d.SectionHeader" index="1" hue="amber" hint-size="100%,28px">Hello there</x-import>
 <x-import component-from-global-scope="SushenDevDesignSystem_801d0d.GlassPanel" padding="lg" strong="{{ true }}" hint-size="100%,240px">
-<h1 style="margin:0;font-family:var(--font-display);font-size:clamp(44px,7vw,82px);line-height:1.02;font-weight:700;letter-spacing:var(--track-display);color:var(--text-primary);max-width:14ch">{{ site.headline }}</h1>
+<h1 class="hero-domain">sushen.dev</h1>
+<h2 class="hero-statement">{{ site.headline }}</h2>
 <p style="margin:var(--space-5) 0 0;max-width:var(--prose-measure);font-family:var(--font-body);font-size:var(--text-md);line-height:var(--lh-md);color:var(--text-secondary);text-wrap:pretty">{{ site.intro }}</p>
 <div style="display:flex;gap:var(--space-3);margin-top:var(--space-6);flex-wrap:wrap">
 <x-import component-from-global-scope="SushenDevDesignSystem_801d0d.Button" variant="primary" icon-right="arrow-right" href="#learning" hint-size="180px,34px">Read the writing</x-import>
@@ -99,10 +102,7 @@ html,body{margin:0}a{color:var(--text-link);text-decoration:none}a:hover{color:v
 <div style="display:grid;gap:var(--space-6)">
 <x-import component-from-global-scope="SushenDevDesignSystem_801d0d.Divider" dashed="{{ true }}" label="end of file" hint-size="100%,16px"></x-import>
 <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:var(--space-8);flex-wrap:wrap">
-<span class="site-mark-wrap">
-  <img class="site-mark site-mark--dark" src="/assets/logo-dark.png" alt="Sushen personal mark" width="1254" height="1254">
-  <img class="site-mark site-mark--light" src="/assets/logo-light.png" alt="Sushen personal mark" width="1254" height="1254">
-</span>
+<span class="site-mark" role="img" aria-label="Sushen personal mark"></span>
 <x-import component-from-global-scope="SushenDevDesignSystem_801d0d.MetaList" items="{% raw %}{{ meta }}{% endraw %}" style="min-width:260px;flex:1" hint-size="260px,88px"></x-import>
 <x-import component-from-global-scope="SushenDevDesignSystem_801d0d.ThemeToggle" hint-size="120px,24px"></x-import>
 </div>

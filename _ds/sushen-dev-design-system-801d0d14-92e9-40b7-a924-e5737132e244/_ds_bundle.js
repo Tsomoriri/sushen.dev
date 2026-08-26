@@ -1319,7 +1319,7 @@ function HomeScreen({
   }, "Read the writing"), /*#__PURE__*/React.createElement(Button, {
     variant: "secondary",
     iconLeft: "mail",
-    href: "mailto:hi@sushen.dev"
+    href: "mailto:me@sushen.dev"
   }, "Say hello")))), /*#__PURE__*/React.createElement("section", null, /*#__PURE__*/React.createElement(SectionHeader, {
     index: 2,
     hue: "coral",
