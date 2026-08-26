@@ -81,6 +81,7 @@ Eleventy automatically adds non-draft notes to the homepage, sorts them newest-f
 - Credentials and badge cards: `src/_data/credentials.json`
 - Credential images and logos: `assets/`
 - Homepage structure and visual styling: `src/index.njk`
+- Shareable contact card at `/card/`: `src/card.njk`
 - Article layout: `src/_includes/layouts/note.njk`
 
 ## CI flow
