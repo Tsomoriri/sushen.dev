@@ -1,13 +1,13 @@
 /* Type scale is tuned to a 28px baseline; every size below has a
    line-height that lands on a 4px increment so the typewriter grid holds. */
 :root{
-  --text-2xs:12px;   --lh-2xs:20px;
-  --text-xs:13px;    --lh-xs:20px;
-  --text-sm:15px;    --lh-sm:24px;
-  --text-base:17px;  --lh-base:28px;
-  --text-md:20px;    --lh-md:32px;
-  --text-lg:24px;    --lh-lg:36px;
-  --text-xl:30px;    --lh-xl:40px;
+  --text-2xs:13px;   --lh-2xs:20px;
+  --text-xs:15px;    --lh-xs:24px;
+  --text-sm:17px;    --lh-sm:28px;
+  --text-base:19px;  --lh-base:32px;
+  --text-md:22px;    --lh-md:36px;
+  --text-lg:26px;    --lh-lg:40px;
+  --text-xl:32px;    --lh-xl:44px;
   --text-2xl:38px;   --lh-2xl:44px;
   --text-3xl:50px;   --lh-3xl:56px;
   --text-4xl:66px;   --lh-4xl:72px;

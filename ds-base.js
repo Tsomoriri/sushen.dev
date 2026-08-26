@@ -2,7 +2,7 @@
 // base at the bound DS folder relative to this file (e.g. '_ds/<folder>' at
 // the project root, '../_ds/<folder>' one level down) — one line to edit.
 (() => {
-  const base = '_ds/sushen-dev-design-system-801d0d14-92e9-40b7-a924-e5737132e244';
+  const base = '/_ds/sushen-dev-design-system-801d0d14-92e9-40b7-a924-e5737132e244';
   for (const p of ["styles.css"]) {
     const l = document.createElement('link');
     l.rel = 'stylesheet'; l.href = base + '/' + p;
