@@ -5,7 +5,7 @@ date: 2026-08-27
 tags: [agents, context-engineering, memory, llm]
 readingTime: 9 min
 summary: Tiered stores, slug-addressed cards updated in place, and forked subagents are three consequences of a single constraint — attention is a finite budget, and an append-only memory spends it.
-# sourceUrl: paste the LinkedIn post URL here once the post is live, then uncomment this line.
+sourceUrl: https://lnkd.in/p/dAMGiy9C
 draft: false
 ---
 
