@@ -13,14 +13,15 @@
   html,body{margin:0} a{color:var(--text-link);text-decoration:none}
   .note-shell{width:min(100%,1360px);margin:0 auto;padding:var(--space-8) clamp(20px,4vw,64px) var(--space-10)}
   .note-back{font:700 var(--text-xs)/1 var(--font-ui);letter-spacing:var(--track-label);text-transform:uppercase}
+  .note-shell,.note-article{min-width:0}
   .note-article{max-width:72ch;margin:var(--space-8) auto 0}
   .note-article h1{font:700 clamp(38px,6vw,66px)/1.05 var(--font-display);letter-spacing:var(--track-display);margin:var(--space-4) 0}
   .note-meta{font:var(--text-xs)/var(--lh-xs) var(--font-mono);color:var(--text-muted)}
   .note-source{display:inline-flex;margin-top:var(--space-7);font:700 var(--text-xs)/var(--lh-xs) var(--font-ui);letter-spacing:var(--track-label);text-transform:uppercase}
-  .note-body{font:var(--text-md)/var(--lh-md) var(--font-body);color:var(--text-secondary);margin-top:var(--space-7)}
+  .note-body{font:var(--text-md)/var(--lh-md) var(--font-body);color:var(--text-secondary);margin-top:var(--space-7);min-width:0;overflow-wrap:break-word}
   .note-body h2{font-family:var(--font-display);color:var(--text-primary);margin-top:var(--space-8)}
   .note-body img{display:block;width:100%;height:auto;margin:var(--space-7) 0;border:1px solid var(--border-hairline)}
-  .note-body :not(pre)>code{padding:2px 6px;border:1px solid var(--border-hairline);background:var(--surface-inset);color:var(--text-primary);border-radius:var(--radius-xs)}
+  .note-body :not(pre)>code{padding:2px 6px;border:1px solid var(--border-hairline);background:var(--surface-inset);color:var(--text-primary);border-radius:var(--radius-xs);overflow-wrap:anywhere}
   .note-body pre{position:relative;margin:var(--space-6) 0;padding:var(--space-5);overflow:auto;border:1px solid var(--border-hairline);background:var(--surface-inset);box-shadow:inset 3px 0 0 var(--accent-3)}
   .note-body pre code{font:var(--text-sm)/var(--lh-sm) var(--font-mono);color:var(--text-primary)}
   .copy-code{position:absolute;top:8px;right:8px;padding:5px 8px;border:1px solid var(--border-hairline);background:var(--bg-raised);color:var(--text-muted);font:700 var(--text-2xs)/1 var(--font-ui);letter-spacing:var(--track-label);text-transform:uppercase;cursor:pointer}
